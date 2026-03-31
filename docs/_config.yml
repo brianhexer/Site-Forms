@@ -1,0 +1,17 @@
+theme: jekyll-theme-minimal
+title: Site-Forms
+description: Web3Forms Alternative with GitHub Pages Integration
+show_downloads: false
+exclude:
+  - node_modules
+  - .git
+  - .gitignore
+  - .env
+  - .env.example
+  - package.json
+  - api/
+  - models/
+  - examples/
+  - CONTRIBUTING.md
+  - GETTING_STARTED.md
+  - PROJECT_SUMMARY.md
