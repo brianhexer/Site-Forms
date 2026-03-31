@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form Example - Site-Forms</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container-sm">
+        <header class="mb-4">
+            <h1>Basic Site-Forms Example</h1>
+            <p class="text-muted">The simplest way to add forms to your site</p>
+        </header>
+
+        <h2>Step 1: Create HTML Form</h2>
+        <pre><code>&lt;form id="my-form" class="site-form" data-form-name="my-form"&gt;
+  &lt;input type="text" name="name" required&gt;
+  &lt;input type="email" name="email" required&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+        <h2>Step 2: Include Scripts</h2>
+        <pre><code>&lt;script src="../js/form-model.js"&gt;&lt;/script&gt;
+&lt;script src="../js/form-handler.js"&gt;&lt;/script&gt;</code></pre>
+
+        <h2>Step 3: Configure Email (Choose One)</h2>
+        <p><strong>Option A: EmailJS (Browser-based)</strong></p>
+        <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.EMAILJS_PUBLIC_KEY = 'YOUR_KEY';
+  window.EMAILJS_SERVICE_ID = 'YOUR_ID';
+  window.EMAILJS_TEMPLATE_ID = 'YOUR_ID';
+&lt;/script&gt;</code></pre>
+
+        <p><strong>Option B: Custom Webhook</strong></p>
+        <pre><code>&lt;form data-webhook-url="https://your-server.com/api/submit"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+
+        <hr>
+
+        <h2>Live Example</h2>
+        <form id="example-form" class="site-form" 
+              data-form-name="example"
+              data-recipient="example@site-forms.com"
+              data-success-message="Great! Your form was received."
+              data-error-message="Oops! Something went wrong.">
+
+            <div class="form-field">
+                <label for="ex-name">Your Name</label>
+                <input type="text" id="ex-name" name="name" required>
+            </div>
+
+            <div class="form-field">
+                <label for="ex-email">Your Email</label>
+                <input type="email" id="ex-email" name="email" required>
+            </div>
+
+            <div class="form-field">
+                <label for="ex-message">Message</label>
+                <textarea id="ex-message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </form>
+
+        <hr>
+
+        <h2>Common Data Attributes</h2>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 1rem; text-align: left; border: 1px solid #ddd;">Attribute</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid #ddd;">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><code>data-form-name</code></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">Unique form identifier</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><code>data-recipient</code></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">Email to receive submissions</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><code>data-redirect-url</code></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">URL to redirect after submit</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><code>data-success-message</code></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">Message shown on success</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><code>data-error-message</code></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">Message shown on error</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Next Steps</h2>
+        <ul style="line-height: 1.8;">
+            <li><a href="contact.html">View Contact Form Example</a></li>
+            <li><a href="newsletter.html">View Newsletter Example</a></li>
+            <li><a href="feedback.html">View Feedback Form Example</a></li>
+            <li><a href="https://github.com/yourusername/Site-Forms">View on GitHub</a></li>
+            <li><a href="../">Back to Home</a></li>
+        </ul>
+    </div>
+
+    <!-- Form Handlers -->
+    <script src="../js/form-model.js"></script>
+    <script src="../js/form-handler.js"></script>
+
+    <!-- Note: For this example to work, configure an email service -->
+</body>
+</html>

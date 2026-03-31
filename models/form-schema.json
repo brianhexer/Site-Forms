@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Site-Forms Schema",
+  "description": "Standard schema for all Site-Forms form definitions",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique form identifier (kebab-case)",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable form name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Form description for documentation"
+    },
+    "version": {
+      "type": "string",
+      "description": "Form schema version (semver)"
+    },
+    "recipient": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "email",
+          "description": "Single recipient email"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "email"
+          },
+          "description": "Multiple recipient emails"
+        }
+      ]
+    },
+    "fields": {
+      "type": "array",
+      "description": "Form fields",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Field name (kebab-case)",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "label": {
+            "type": "string",
+            "description": "Display label for field"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "email",
+              "tel",
+              "url",
+              "number",
+              "textarea",
+              "select",
+              "checkbox",
+              "radio",
+              "date",
+              "time"
+            ]
+          },
+          "required": {
+            "type": "boolean",
+            "default": false
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "validation": {
+            "type": "object",
+            "properties": {
+              "pattern": {
+                "type": "string",
+                "description": "Regex pattern for validation"
+              },
+              "minLength": {
+                "type": "integer"
+              },
+              "maxLength": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              }
+            }
+          },
+          "options": {
+            "type": "array",
+            "description": "For select/radio/checkbox fields",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "redirectUrl": {
+          "type": "string",
+          "description": "URL to redirect after submission"
+        },
+        "successMessage": {
+          "type": "string",
+          "description": "Success message to display"
+        },
+        "errorMessage": {
+          "type": "string",
+          "description": "Error message on failure"
+        },
+        "rateLimit": {
+          "type": "integer",
+          "description": "Max submissions per hour per IP"
+        },
+        "spamCheck": {
+          "type": "boolean",
+          "default": true
+        },
+        "confirmationEmail": {
+          "type": "boolean",
+          "description": "Send email confirmation to user"
+        },
+        "notificationEmail": {
+          "type": "boolean",
+          "description": "Send notification to admin"
+        }
+      }
+    }
+  },
+  "required": ["id", "name", "fields", "recipient"],
+  "example": {
+    "id": "contact-form",
+    "name": "Contact Form",
+    "version": "1.0.0",
+    "recipient": "contact@example.com",
+    "fields": [
+      {
+        "name": "full-name",
+        "label": "Full Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "John Doe"
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "required": true,
+        "validation": {
+          "pattern": "^[^@]+@[^@]+\\.[^@]+$"
+        }
+      },
+      {
+        "name": "subject",
+        "label": "Subject",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "message",
+        "label": "Message",
+        "type": "textarea",
+        "required": true,
+        "validation": {
+          "minLength": 10
+        }
+      }
+    ],
+    "settings": {
+      "redirectUrl": "/thank-you",
+      "successMessage": "Thank you! We received your message.",
+      "rateLimit": 5,
+      "confirmationEmail": true,
+      "notificationEmail": true
+    }
+  }
+}

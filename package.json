@@ -1,0 +1,44 @@
+{
+  "name": "Site-Forms",
+  "version": "1.0.0",
+  "description": "Web3Forms alternative - Open source form submission service for GitHub Pages",
+  "main": "api/submit-form.js",
+  "scripts": {
+    "test": "echo \"No tests yet\"",
+    "start": "node api/submit-form.js",
+    "dev": "echo \"Use 'python -m http.server 8000' to serve docs locally\""
+  },
+  "keywords": [
+    "forms",
+    "github-pages",
+    "email",
+    "web3forms",
+    "form-submission",
+    "site-forms"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/Site-Forms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/Site-Forms/issues"
+  },
+  "homepage": "https://github.com/yourusername/Site-Forms",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@emailjs/nodejs": "^3.11.0",
+    "@sendgrid/mail": "^7.7.0",
+    "firebase": "^9.23.0",
+    "firebase-admin": "^11.11.0",
+    "express": "^4.18.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "ajv-cli": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
