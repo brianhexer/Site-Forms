@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site-Forms Complete Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .guide-section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .guide-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .step-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .link-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .link-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .link-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .link-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-guide {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary-guide {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary-guide:hover {
+            background: #764ba2;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary-guide {
+            background: #e9ecef;
+            color: #333;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary-guide:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .table-of-contents {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .table-of-contents h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .table-of-contents li {
+            margin: 0.5rem 0;
+        }
+
+        .table-of-contents a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:hover {
+            background: #f5f7fa;
+        }
+
+        footer {
+            background: #2d2d2d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1>Site-Forms Complete Guide</h1>
+        <p>Build powerful forms for your website without backend complexity</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            📍 Live at: <strong>brianhexer.github.io/Site-Forms/</strong>
+        </p>
+    </div>
+
+    <div class="container-md">
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+            <h3>📑 Quick Navigation</h3>
+            <ul>
+                <li><a href="#what-is">What is Site-Forms?</a></li>
+                <li><a href="#features">Key Features</a></li>
+                <li><a href="#quick-start">Quick Start (5 minutes)</a></li>
+                <li><a href="#email-setup">Email Provider Setup</a></li>
+                <li><a href="#forms">Example Forms</a></li>
+                <li><a href="#create-form">Create Your Own Form</a></li>
+                <li><a href="#resources">Resources & Links</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </div>
+
+        <!-- What is Site-Forms -->
+        <div class="guide-section" id="what-is">
+            <h2>🚀 What is Site-Forms?</h2>
+            <p>Site-Forms is a <strong>free, open-source form management system</strong> designed for GitHub Pages. It allows you to:</p>
+            <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                <li>✅ Create unlimited contact, newsletter, feedback, and survey forms</li>
+                <li>✅ Send form responses directly to your email</li>
+                <li>✅ Deploy on GitHub Pages at no cost</li>
+                <li>✅ Use no backend servers or complex setup</li>
+                <li>✅ Collaborate with team members using standard form templates</li>
+                <li>✅ Share reusable form components across projects</li>
+                <li>✅ Protect against spam and abuse automatically</li>
+            </ul>
+        </div>
+
+        <!-- Features -->
+        <div class="guide-section" id="features">
+            <h2>✨ Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📧 Email Delivery</h3>
+                    <p>Forms send emails instantly to your inbox using EmailJS, SendGrid, Firebase, or custom webhooks.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Mobile Ready</h3>
+                    <p>All forms are fully responsive and work perfectly on phones, tablets, and desktops.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔐 Secure</h3>
+                    <p>Built-in spam detection, rate limiting, input validation, and CORS protection.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>♻️ Reusable</h3>
+                    <p>Use the same form model across multiple pages and projects. Share templates with your team.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ No Backend</h3>
+                    <p>Everything works on the frontend. No servers, databases, or complex infrastructure needed.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📚 Well Documented</h3>
+                    <p>Complete guides, API reference, examples, and code documentation included.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="guide-section" id="quick-start">
+            <h2>⚡ Quick Start (5 Minutes)</h2>
+            
+            <div class="step-box">
+                <h3><span class="step-number">1</span>Sign Up for EmailJS</h3>
+                <p>Go to <a href="https://emailjs.com" target="_blank" rel="noopener">emailjs.com</a> and create a free account (200 emails/month included).</p>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">2</span>Create Email Service</h3>
+                <p>In EmailJS dashboard:</p>
+                <ul style="margin: 0.5rem 0 0 2rem;">
+                    <li>Click "Email Services"</li>
+                    <li>Click "Add Service"</li>
+                    <li>Select your email provider (Gmail, Outlook, etc.)</li>
+                    <li>Follow the setup wizard</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">3</span>Create Email Template</h3>
+                <p>Create a template for your forms:</p>
+                <div class="code-block">
+Name: contact_form
+Subject: New submission from {{from_name}}
+
+Content:
+From: {{from_name}} ({{from_email}})
+Message: {{message}}
+                </div>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">4</span>Get Your Credentials</h3>
+                <p>Copy these three values from EmailJS:</p>
+                <ul style="margin: 0.5rem 0 0 2rem; font-family: monospace;">
+                    <li>Service ID: <code>service_xxxxx</code></li>
+                    <li>Template ID: <code>template_xxxxx</code></li>
+                    <li>Public Key: <code>your_public_key</code></li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">5</span>Test a Form</h3>
+                <p>Visit one of the example forms and test it:</p>
+                <div class="button-group">
+                    <a href="pages/contact.html" class="btn-guide btn-primary-guide">📬 Contact Form</a>
+                    <a href="pages/newsletter.html" class="btn-guide btn-primary-guide">📰 Newsletter</a>
+                    <a href="pages/feedback.html" class="btn-guide btn-primary-guide">⭐ Feedback</a>
+                </div>
+            </div>
+
+            <div class="success-box">
+                ✅ <strong>That's it!</strong> You now have a working form system. Fill out a form to receive an email!
+            </div>
+        </div>
+
+        <!-- Email Setup -->
+        <div class="guide-section" id="email-setup">
+            <h2>📧 Email Provider Setup</h2>
+
+            <h3>EmailJS (Recommended - Simplest)</h3>
+            <p><strong>Best for:</strong> GitHub Pages, quick setup, no backend needed</p>
+            <div class="info-box">
+                <strong>Free tier:</strong> 200 emails/month
+            </div>
+            <div class="button-group">
+                <a href="EMAIL_SETUP.md" class="btn-guide btn-secondary-guide">📖 Full EmailJS Guide</a>
+            </div>
+
+            <h3 style="margin-top: 2rem;">SendGrid (Professional)</h3>
+            <p><strong>Best for:</strong> Production, more emails, professional email service</p>
+            <div class="info-box">
+                <strong>Free tier:</strong> 250 emails/day
+            </div>
+            <div class="button-group">
+                <a href="EMAIL_SETUP.md" class="btn-guide btn-secondary-guide">📖 Full SendGrid Guide</a>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Firebase (Scalable)</h3>
+            <p><strong>Best for:</strong> Serverless functions, scalability, Google integration</p>
+            <div class="info-box">
+                <strong>Free tier:</strong> 125K function invocations/month
+            </div>
+
+            <h3 style="margin-top: 2rem;">Custom Webhook</h3>
+            <p><strong>Best for:</strong> Full control, your own backend, custom logic</p>
+            <p>Send form data to your own server for processing.</p>
+        </div>
+
+        <!-- Example Forms -->
+        <div class="guide-section" id="forms">
+            <h2>📦 Example Forms</h2>
+            <p>We've included ready-to-use form examples you can customize:</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Purpose</th>
+                        <th>Fields</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>📬 Contact Form</strong></td>
+                        <td>Collect inquiries and messages</td>
+                        <td>Name, Email, Subject, Message</td>
+                        <td><a href="pages/contact.html">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>📰 Newsletter</strong></td>
+                        <td>Email subscription</td>
+                        <td>Name, Email, Interests</td>
+                        <td><a href="pages/newsletter.html">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>⭐ Feedback</strong></td>
+                        <td>Collect user feedback & ratings</td>
+                        <td>Name, Email, Category, Rating, Message</td>
+                        <td><a href="pages/feedback.html">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>📝 Basic Example</strong></td>
+                        <td>Learning & quick start</td>
+                        <td>Name, Email, Message</td>
+                        <td><a href="../examples/basic-form.html">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 1rem; color: #666;">
+                <em>All forms are fully responsive and production-ready. Customize them to match your needs!</em>
+            </p>
+        </div>
+
+        <!-- Create Your Own Form -->
+        <div class="guide-section" id="create-form">
+            <h2>🎨 Create Your Own Form</h2>
+
+            <h3>Step 1: Copy the Template</h3>
+            <div class="code-block">
+&lt;form id="my-form" class="site-form" 
+      data-form-name="my-form"
+      data-recipient="your-email@example.com"
+      data-success-message="Thank you!"
+      data-error-message="Please try again"&gt;
+  
+  &lt;div class="form-field"&gt;
+    &lt;label for="name"&gt;Name&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+  &lt;/div&gt;
+  
+  &lt;button type="submit" class="btn btn-submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script src="../js/form-model.js"&gt;&lt;/script&gt;
+&lt;script src="../js/form-handler.js"&gt;&lt;/script&gt;
+            </div>
+
+            <h3>Step 2: Add Your Fields</h3>
+            <div class="code-block">
+&lt;div class="form-field"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+&lt;/div&gt;
+
+&lt;div class="form-field"&gt;
+  &lt;label for="message"&gt;Message&lt;/label&gt;
+  &lt;textarea id="message" name="message" required&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Step 3: Customize Data Attributes</h3>
+            <p>Important attributes on the form tag:</p>
+            <ul style="margin: 1rem 0 0 2rem;">
+                <li><code>data-recipient</code> - Email to receive submissions</li>
+                <li><code>data-success-message</code> - Message shown on success</li>
+                <li><code>data-error-message</code> - Message shown on error</li>
+                <li><code>data-redirect-url</code> - Optional redirect after submit</li>
+            </ul>
+
+            <h3>Step 4: Test & Deploy</h3>
+            <ol style="margin: 1rem 0 0 2rem;">
+                <li>Test locally with Python: <code>python -m http.server 8000</code></li>
+                <li>Verify form submits and you receive email</li>
+                <li>Push to GitHub: <code>git add . && git commit -m "Add my form" && git push</code></li>
+                <li>Auto-deployed to GitHub Pages! 🚀</li>
+            </ol>
+
+            <div class="button-group">
+                <a href="FORM_SCHEMA.md" class="btn-guide btn-secondary-guide">📋 Form Schema Reference</a>
+                <a href="API.md" class="btn-guide btn-secondary-guide">🔌 API Reference</a>
+            </div>
+        </div>
+
+        <!-- Resources & Links -->
+        <div class="link-section" id="resources">
+            <h2>📚 Resources & Links</h2>
+            <p style="margin-bottom: 1.5rem;">Helpful guides and documentation:</p>
+
+            <div class="link-grid">
+                <a href="index.html" class="link-card">
+                    <h4>🏠 Home</h4>
+                    <p>Landing page with project overview and demo</p>
+                </a>
+                <a href="EMAIL_SETUP.md" class="link-card">
+                    <h4>📧 Email Setup</h4>
+                    <p>Detailed setup guides for all email providers</p>
+                </a>
+                <a href="API.md" class="link-card">
+                    <h4>🔌 API Reference</h4>
+                    <p>Complete API documentation and examples</p>
+                </a>
+                <a href="FORM_SCHEMA.md" class="link-card">
+                    <h4>📋 Form Schema</h4>
+                    <p>Standard form definition and field types</p>
+                </a>
+                <a href="https://github.com/brianhexer/Site-Forms" class="link-card" target="_blank" rel="noopener">
+                    <h4>💻 GitHub Repo</h4>
+                    <p>Source code, issues, and contributions</p>
+                </a>
+                <a href="https://github.com/brianhexer/Site-Forms/blob/main/CONTRIBUTING.md" class="link-card" target="_blank" rel="noopener">
+                    <h4>🤝 Contributing</h4>
+                    <p>How to contribute to the project</p>
+                </a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h3>📍 Site URLs</h3>
+                <ul style="margin: 1rem 0 0 2rem;">
+                    <li><strong>Live Site:</strong> brianhexer.github.io/Site-Forms/</li>
+                    <li><strong>GitHub:</strong> github.com/brianhexer/Site-Forms</li>
+                    <li><strong>Contact Form:</strong> brianhexer.github.io/Site-Forms/pages/contact.html</li>
+                    <li><strong>Newsletter:</strong> brianhexer.github.io/Site-Forms/pages/newsletter.html</li>
+                    <li><strong>Feedback:</strong> brianhexer.github.io/Site-Forms/pages/feedback.html</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="guide-section" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: Is Site-Forms free?</h3>
+                <p>Yes! The system itself is free and open-source. Email providers have free tiers (EmailJS: 200/month, SendGrid: 250/day).</p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: Do I need a backend server?</h3>
+                <p>No! With EmailJS, everything runs in the browser. No backend needed.</p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: Can I customize the forms?</h3>
+                <p>Yes! All forms are fully customizable. Edit HTML, CSS, and form fields as needed.</p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: How do I prevent spam?</h3>
+                <p>Site-Forms has built-in spam detection, rate limiting (5 submissions/hour by default), and input validation.</p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: Can multiple people use this?</h3>
+                <p>Yes! Each team member can create their own forms. The system uses a standard form schema so everything is compatible.</p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: What if I need more emails per month?</h3>
+                <p>Upgrade your email provider plan, or use multiple providers (SendGrid, Firebase, etc.).</p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: How do I test forms locally?</h3>
+                <p>Run: <code style="background: #f0f0f0; padding: 2px 6px;">python -m http.server 8000</code> then visit <code style="background: #f0f0f0; padding: 2px 6px;">localhost:8000/docs/</code></p>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3>Q: Can I use this on a custom domain?</h3>
+                <p>Yes! Just set up a custom domain in GitHub Pages settings and point your DNS to GitHub.</p>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div class="guide-section" id="support">
+            <h2>💬 Support & Community</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📖 Documentation</h3>
+                    <p>Comprehensive guides and API reference included in project.</p>
+                    <a href="index.html" style="color: #667eea; font-weight: 600;">Browse Docs →</a>
+                </div>
+                <div class="feature-card">
+                    <h3>🐛 Report Issues</h3>
+                    <p>Found a bug? Create an issue on GitHub.</p>
+                    <a href="https://github.com/brianhexer/Site-Forms/issues" target="_blank" rel="noopener" style="color: #667eea; font-weight: 600;">GitHub Issues →</a>
+                </div>
+                <div class="feature-card">
+                    <h3>💡 Discussions</h3>
+                    <p>Ask questions and share ideas with the community.</p>
+                    <a href="https://github.com/brianhexer/Site-Forms/discussions" target="_blank" rel="noopener" style="color: #667eea; font-weight: 600;">GitHub Discussions →</a>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 2rem;">
+                <strong>🎯 Ready to Start?</strong> Follow the Quick Start section above to set up your first form in 5 minutes!
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem; border-radius: 8px; text-align: center; margin: 3rem 0;">
+            <h2 style="color: white; margin-bottom: 1rem;">Ready to Build Interactive Forms?</h2>
+            <p style="margin-bottom: 1.5rem; opacity: 0.9;">Choose one of the example forms or create your own in minutes.</p>
+            <div class="button-group" style="justify-content: center;">
+                <a href="pages/contact.html" class="btn-guide btn-secondary-guide" style="background: white; color: #667eea;">📬 Try Contact Form</a>
+                <a href="pages/newsletter.html" class="btn-guide btn-secondary-guide" style="background: white; color: #667eea;">📰 Try Newsletter</a>
+                <a href="pages/feedback.html" class="btn-guide btn-secondary-guide" style="background: white; color: #667eea;">⭐ Try Feedback</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Site-Forms</h3>
+        <p>Web3Forms Alternative • Open Source • GitHub Pages Compatible</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/brianhexer/Site-Forms" target="_blank" rel="noopener">GitHub</a> • 
+            <a href="https://github.com/brianhexer/Site-Forms/issues" target="_blank" rel="noopener">Issues</a> • 
+            <a href="https://brianhexer.github.io/Site-Forms/" target="_blank" rel="noopener">Live Site</a>
+        </p>
+        <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
+            &copy; 2024 Site-Forms • Licensed under MIT
+        </p>
+    </footer>
+</body>
+</html>

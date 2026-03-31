@@ -2,6 +2,9 @@
 
 A lightweight, open-source form submission service that integrates with GitHub Pages and allows direct email delivery without external dependencies.
 
+🌐 **Live Demo**: [brianhexer.github.io/Site-Forms](https://brianhexer.github.io/Site-Forms/)
+📖 **Complete Guide**: [brianhexer.github.io/Site-Forms/guide.html](https://brianhexer.github.io/Site-Forms/guide.html)
+
 ## 🚀 Features
 
 - **Direct Email Delivery** - Submit forms directly to recipient emails
@@ -43,22 +46,20 @@ Site-Forms/
 
 ## 🔧 Quick Start
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/Site-Forms.git
-   cd Site-Forms
-   ```
+**Visit the [📖 Complete Guide](https://brianhexer.github.io/Site-Forms/guide.html) for step-by-step instructions!**
 
-2. **Configure Environment**
-   ```bash
-   cp .env.example .env
-   # Add your email service credentials
-   ```
+1. **Sign Up for EmailJS**
+   - Go to [emailjs.com](https://emailjs.com)
+   - Create free account (200 emails/month)
 
-3. **Deploy to GitHub Pages**
-   - Push to main branch
-   - Enable GitHub Pages in repository settings
-   - Pages will auto-deploy from `/docs` folder
+2. **Get Your Credentials**
+   - Service ID, Template ID, Public Key
+
+3. **Test a Form**
+   - Visit the [Contact Form](https://brianhexer.github.io/Site-Forms/pages/contact.html)
+   - Fill it out and submit
+
+🚀 **That's it!** Forms send emails immediately. See the [Complete Guide](https://brianhexer.github.io/Site-Forms/guide.html) for more details.
 
 ## 📝 How to Create a Form
 
@@ -148,10 +149,11 @@ This project is designed for team collaboration:
 
 ## 📚 Documentation
 
-- [Form Schema Guide](./docs/FORM_SCHEMA.md)
-- [API Reference](./docs/API.md)
-- [Email Integration](./docs/EMAIL_SETUP.md)
-- [Contributing Guide](./CONTRIBUTING.md)
+- **[📖 Complete Guide](https://brianhexer.github.io/Site-Forms/guide.html)** - Start here! Full walkthrough with examples
+- **[Form Schema Guide](./docs/FORM_SCHEMA.md)** - Form definition and field types
+- **[API Reference](./docs/API.md)** - Complete API documentation
+- **[Email Integration](./docs/EMAIL_SETUP.md)** - Setup guides for all email providers
+- **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute and collaborate
 
 ## 🚀 Deployment Options
 
